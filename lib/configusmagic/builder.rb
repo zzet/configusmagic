@@ -10,12 +10,8 @@ module Configusmagic
       @config
     end
 
-    def method_missing(method, *args, &block)
-      @config[method] = args.first
-    end
-
     def env(environment, *args, &block)
-      @config[environment] = Configusmagic::RecursiveBuilder.new block
+      @config[environment] = Configusmagic::RecursiveBuilder.build block
     end
   end
 end
