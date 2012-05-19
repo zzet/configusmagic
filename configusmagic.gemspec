@@ -2,10 +2,10 @@
 require File.expand_path('../lib/configusmagic/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.authors       = ["Andrey Kumanyaev"]
-  gem.email         = ["me@zzet.org"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.authors       = ["Andrey Kumanyaev", "Andrey Subbota"]
+  gem.email         = ["me@zzet.org", "subbota@gmail.com"]
+  gem.description   = %q{Configus magic}
+  gem.summary       = %q{Summary to configus}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($\)
