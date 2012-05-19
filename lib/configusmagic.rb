@@ -1,4 +1,5 @@
-require "configusmagic/version"
+require 'configusmagic/version'
+require 'active_support/core_ext/hash/deep_merge'
 
 module Configusmagic
   autoload :Builder, 'configusmagic/builder'

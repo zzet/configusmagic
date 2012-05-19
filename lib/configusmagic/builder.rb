@@ -1,5 +1,3 @@
-require  'active_support/core_ext/hash/deep_merge'
-
 module Configusmagic
   class Builder
     def initialize(&block)
