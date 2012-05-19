@@ -7,6 +7,7 @@ Gem::Specification.new do |gem|
   gem.description   = %q{Configus magic}
   gem.summary       = %q{Summary to configus}
   gem.homepage      = ""
+  gem.add_dependency('activesupport')
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
