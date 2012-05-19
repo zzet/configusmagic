@@ -1,6 +1,8 @@
+require  'active_support/core_ext/hash/deep_merge'
+
 module Configusmagic
   class Builder
-    def initialize(block)
+    def initialize(&block)
       @block = block
       @config = {}
     end
@@ -11,7 +13,10 @@ module Configusmagic
     end
 
     def env(environment, *args, &block)
-      @config[environment] = Configusmagic::RecursiveBuilder.build block
+      @config[environment] = Configusmagic::RecursiveBuilder.new(&block).build
+      if args.first && args.first[:parent]
+        @config[environment] = @config[args.first[:parent]].deep_merge @config[environment]
+      end
     end
   end
 end
