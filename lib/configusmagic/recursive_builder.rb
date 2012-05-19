@@ -5,6 +5,11 @@ module Configusmagic
       @config = {}
     end
 
+    def self.build(&block)
+      b = new(&block)
+      b.build
+    end
+
     def build
       instance_eval &@block
       @config
