@@ -38,4 +38,5 @@ describe Configusmagic, "Configus" do
     config.key_b.key_d.should eq("d")
     config.key_c.should eq("c")
   end
+
 end

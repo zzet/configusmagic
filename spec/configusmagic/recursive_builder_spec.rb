@@ -29,4 +29,6 @@ describe Configusmagic::RecursiveBuilder, "tests " do
       :keyB => "b"
     })
   end
+
+
 end

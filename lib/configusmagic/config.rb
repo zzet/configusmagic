@@ -11,7 +11,11 @@ module Configusmagic
       end
     end
 
-    def _to_hash
+    def to_hash
+      @return = {}
+      @hash.each do |key, value|
+        @return[key] = (value.kind_of? Hash) ? value.to_hash : value
+      end
       @return
     end
   end
