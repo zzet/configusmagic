@@ -3,6 +3,7 @@ module Configusmagic
     def initialize(&block)
       @block = block
       @config = {}
+      @visited = []
     end
 
     def build
@@ -18,9 +19,17 @@ module Configusmagic
    end
 
    def get(environment)
+     @visited = []
+     get_env(environment)
+   end
+
+   def get_env(environment)
+     @visited << environment
      if @config[environment][:parent]
        parent = @config[environment][:parent]
-       @config[environment][:config] = get(parent).deep_merge @config[environment][:config]
+       if !@visited.include?(parent)
+         @config[environment][:config] = get_env(parent).deep_merge @config[environment][:config]
+       end
      end
      @config[environment][:config]
    end
